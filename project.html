@@ -227,4 +227,13 @@ function updateSummary() {
     let seatList = selectedSeats.map(s => s.label).join(", ");
     document.getElementById("summary").textContent = `Seats: ${seatList} | Total Fare: ₹${total}`;
 }
+function confirmBooking() {
+    if (selectedSeats.length === 0) {
+        alert("Please select at least one seat before proceeding.");
+        return;
+    }
+    alert("Proceeding to payment page...");
+    window.location.href = "payment.html"; // Redirect to payment page
+}
+
 
