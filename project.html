@@ -218,4 +218,13 @@ function toggleSeat(seat, label, price) {
     }
 updateSummary();
 }
+function updateSummary() {
+    if (selectedSeats.length === 0) {
+        document.getElementById("summary").textContent = "No seats selected.";
+        return;
+    }
+    let total = selectedSeats.reduce((sum, seat) => sum + seat.price, 0);
+    let seatList = selectedSeats.map(s => s.label).join(", ");
+    document.getElementById("summary").textContent = `Seats: ${seatList} | Total Fare: ₹${total}`;
+}
 
