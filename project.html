@@ -171,4 +171,10 @@ rows.forEach(row => {
 
     const rightSide = document.createElement("div");
     rightSide.classList.add("side");
+ ["1","2","3"].forEach((num, idx) => {
+        let seatType = idx === 0 ? "window" : idx === 1 ? "middle" : "aisle";
+        let seat = createSeat(`${row}${num}`, seatPrices[seatType]);
+        leftSide.appendChild(seat);
+    });
+
 
