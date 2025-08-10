@@ -191,4 +191,18 @@ rows.forEach(row => {
 
     seatsContainer.appendChild(rowDiv);
 });
+function createSeat(label, price) {
+    const seat = document.createElement("div");
+    seat.classList.add("seat");
+    seat.innerHTML = `${label}<span>₹${price}</span>`;
+
+    // Mark as booked if in pre-booked list
+    if (bookedSeats.includes(label)) {
+        seat.classList.add("booked");
+    } else {
+        seat.addEventListener("click", () => toggleSeat(seat, label, price));
+    }
+
+    return seat;
+}
 
