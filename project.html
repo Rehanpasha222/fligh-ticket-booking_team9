@@ -216,4 +216,6 @@ function toggleSeat(seat, label, price) {
     } else {
         selectedSeats = selectedSeats.filter(s => s.label !== label);
     }
+updateSummary();
+}
 
