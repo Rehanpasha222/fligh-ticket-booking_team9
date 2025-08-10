@@ -182,4 +182,13 @@ rows.forEach(row => {
         let seat = createSeat(`${row}${num}`, seatPrices[seatType]);
         rightSide.appendChild(seat);
     });
+ const aisle = document.createElement("div");
+    aisle.classList.add("aisle-gap");
+
+    rowDiv.appendChild(leftSide);
+    rowDiv.appendChild(aisle);
+    rowDiv.appendChild(rightSide);
+
+    seatsContainer.appendChild(rowDiv);
+});
 
