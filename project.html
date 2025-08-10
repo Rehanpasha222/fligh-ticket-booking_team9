@@ -206,3 +206,14 @@ function createSeat(label, price) {
     return seat;
 }
 let selectedSeats = [];
+function toggleSeat(seat, label, price) {
+    if (seat.classList.contains("booked")) return; // Ignore booked seats
+
+    seat.classList.toggle("selected");
+
+    if (seat.classList.contains("selected")) {
+        selectedSeats.push({ label, price });
+    } else {
+        selectedSeats = selectedSeats.filter(s => s.label !== label);
+    }
+
