@@ -236,4 +236,9 @@ function confirmBooking() {
     window.location.href = "payment.html"; // Redirect to payment page
 }
 
+function resetSelection() {
+    document.querySelectorAll(".seat.selected").forEach(seat => seat.classList.remove("selected"));
+    selectedSeats = [];
+    updateSummary();
+}
 
